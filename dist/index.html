@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <title>Neighborhood Map</title>
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-column">
+      <div class="row">
+        <div class="collapse show width text-nowrap text-white" id="sideContent">
+          <h2>Titletown Spots</h2>
+          <form data-bind="submit: applyFilter">
+            <input id="txtLocation" name="location" type="text">
+            <input id="btnSubmit" type="submit" value="Filter">
+          </form>
+          <table class="table-hover">
+            <tbody data-bind="foreach: filteredLocations">
+              <tr class="clickable-row">
+                <td class="locations-item" data-bind="text: name, click: $parent.setSelectedItem.bind($parent), css: { selectedHighlight: isSelected() }"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="side-bar bg-dark">
+        </div>
+        <div class="content">
+          <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideContent" onclick="centerMap()">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
+          <div id="map">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/knockout.js"></script>
+  <script src="js/mapAPI.js"></script>
+  <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2vSlwzVoO7GkhN22kkfc0IY8THipWPMg&callback=initMap">
+  </script>
+  <script src="js/main.js"></script>
+</html>

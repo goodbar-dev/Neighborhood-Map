@@ -1,0 +1,98 @@
+table {
+  width: 100%;
+}
+
+/*
+Left Pane Collapse CSS retrieved from:
+https://www.codeply.com/go/UiteY92ke8/bootstrap-4-horizontal-collapse#!
+*/
+.collapse {
+  visibility: hidden;
+}
+.collapse.show {
+  visibility: visible;
+  display: block;
+  height: 100vh;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.collapsing.width {
+  -webkit-transition-property: width, visibility;
+  transition-property: width, visibility;
+  width: 0;
+  height: 100vh;
+}
+/*
+End Left Pane Collapse CSS.
+*/
+
+.container-fluid {
+  height: 100vh;
+}
+
+.side-bar {
+  height: 100vh;
+  width: 10px;
+}
+
+.locations-item {
+  font-size: 20px;
+  color: #8B8A86;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.selectedHighlight {
+  background-color: #323332;
+  font-weight: bold;
+  color: orange;
+}
+
+/*
+Selectors for modifying style on table row hover retrieved from:
+http://www.kodingmadesimple.com/2016/10/bootstrap-highlight-table-row-onclick-hover-example.html
+*/
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #323332;
+    font-weight: bold;
+    color: #F6F6E5;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#sideContent {
+  background-color: black;
+}
+
+#btnSubmit {
+  background-color: #4979AF;
+  color: white;
+  margin: 0;
+  width: 55px;
+  padding: 3px;
+  border: 0;
+}
+
+#txtLocation {
+  margin: 0;
+  width: 200px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}

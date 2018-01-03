@@ -1,0 +1,38 @@
+{
+  "name": "neighborhood-map",
+  "description": "Neighborhood Map",
+  "main": "index.js",
+  "authors": [
+    "Joe Widi"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/goodbar-dev/Neighborhood-Map",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "knockout": "^3.4.2",
+    "bootstrap": "^3.3.7"
+  },
+  "install": {
+    "options": {
+      "includePackageNameInInstallPath": false
+    },
+    "path": {
+      "css": "src/css",
+      "js": "src/js"
+    },
+    "sources": {
+      "bootstrap": [
+        "bower_components/bootstrap/dist/css/bootstrap.css",
+        "bower_components/bootstrap/dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

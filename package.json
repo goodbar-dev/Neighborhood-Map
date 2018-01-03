@@ -1,0 +1,29 @@
+{
+  "name": "neighborhood-map",
+  "version": "1.0.0",
+  "description": "Neighborhood Map",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodbar-dev/Neighborhood-Map.git"
+  },
+  "author": "Joe Widi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goodbar-dev/Neighborhood-Map/issues"
+  },
+  "homepage": "https://github.com/goodbar-dev/Neighborhood-Map#readme",
+  "devDependencies": {
+    "browser-sync": "^2.19.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^3.9.0"
+  }
+}
