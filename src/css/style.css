@@ -3,7 +3,7 @@ table {
 }
 
 /*
-Left Pane Collapse CSS retrieved from:
+Left Pane Collapse CSS retrieved & modified from:
 https://www.codeply.com/go/UiteY92ke8/bootstrap-4-horizontal-collapse#!
 */
 .collapse {
@@ -18,14 +18,22 @@ https://www.codeply.com/go/UiteY92ke8/bootstrap-4-horizontal-collapse#!
   position: relative;
   height: 0;
   overflow: hidden;
+  -o-transition-property: height, visibility;
+  -moz-transition-property: height, visibility;
   -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
+  -o-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
   -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
+  -o-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 .collapsing.width {
+  -o-transition-property: height, visibility;
+  -moz-transition-property: height, visibility;
   -webkit-transition-property: width, visibility;
   transition-property: width, visibility;
   width: 0;
@@ -45,7 +53,7 @@ End Left Pane Collapse CSS.
 }
 
 .locations-item {
-  font-size: 20px;
+  font-size: 16px;
   color: #8B8A86;
   padding: 10px;
   cursor: pointer;
@@ -53,7 +61,6 @@ End Left Pane Collapse CSS.
 
 .selectedHighlight {
   background-color: #323332;
-  font-weight: bold;
   color: orange;
 }
 
@@ -64,7 +71,6 @@ http://www.kodingmadesimple.com/2016/10/bootstrap-highlight-table-row-onclick-ho
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
     background-color: #323332;
-    font-weight: bold;
     color: #F6F6E5;
 }
 
