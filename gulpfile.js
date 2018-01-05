@@ -1,9 +1,7 @@
 const gulp = require('gulp');
-const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
-const cleanCSS = require('gulp-clean-css');
 const server = browserSync.create();
 const paths = {
   js: {
@@ -48,11 +46,10 @@ gulp.task('CopyHTML', function() {
     .pipe(gulp.dest(paths.html.dest));
 });
 
-//Minify & Concat all CSS files
+//Concat all CSS files
 gulp.task('MinifyCSS', function() {
   gulp.src(paths.css.src, { sourcemaps: true })
     .pipe(concat('style.min.css'))
-    //.pipe(cleanCSS())
     .pipe(gulp.dest(paths.css.dest));
 });
 

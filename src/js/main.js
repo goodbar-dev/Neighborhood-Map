@@ -32,6 +32,7 @@ let locations = [
 class LocationsViewModel {
   constructor() {
     this.filteredLocations = ko.observableArray();
+    this.filterText = ko.observable('');
     this.infoWindow = new google.maps.InfoWindow();
     this.applyFilter();
   }
@@ -50,7 +51,7 @@ class LocationsViewModel {
       location.marker.setAnimation(google.maps.Animation.BOUNCE);
       setTimeout(function() {
         location.marker.setAnimation(null);
-      }, 720);
+      }, 700);
 
       //build and display infoWindow
       this.showInfoWindow(location);
@@ -160,7 +161,7 @@ class LocationsViewModel {
     });
   }
 
-  applyFilter(filterText) {
+  applyFilter() {
     //initialize filteredLocations (clear markers and wipe array)
     this.filteredLocations().forEach(location => {
       location.marker.setMap(null);
@@ -172,8 +173,8 @@ class LocationsViewModel {
     //if no filter is specfiied, add location to unfiltered list.
     //if filter is specfieid, only add location if it matches the filter text.
     locations.forEach(location => {
-      if (filterText !== undefined) {
-        if (location.name().toLowerCase().indexOf(filterText.location.value.toLowerCase()) > -1) {
+      if (this.filterText() !== '') {
+        if (location.name().toLowerCase().indexOf(this.filterText().toLowerCase()) > -1) {
           this.filteredLocations.push(location);
         }
       } else {
@@ -201,5 +202,9 @@ class LocationsViewModel {
 }
 
 window.onload = function() {
-  ko.applyBindings(new LocationsViewModel());
+  viewModel = new LocationsViewModel();
+  ko.applyBindings(viewModel);
+
+  //Live search logic retrieved from https://opensoul.org/2011/06/23/live-search-with-knockoutjs/
+  viewModel.filterText.subscribe(viewModel.applyFilter.bind(viewModel));
 };

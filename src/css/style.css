@@ -93,9 +93,9 @@ http://www.kodingmadesimple.com/2016/10/bootstrap-highlight-table-row-onclick-ho
   border: 0;
 }
 
-#txtLocation {
+#txtFilter {
   margin: 0;
-  width: 200px;
+  width: 240px;
 }
 
 #map {

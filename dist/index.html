@@ -16,10 +16,7 @@
       <div class="row">
         <div class="collapse show width text-nowrap text-white" id="sideContent">
           <h2>Titletown Spots</h2>
-          <form data-bind="submit: applyFilter">
-            <input id="txtLocation" name="location" type="text">
-            <input id="btnSubmit" type="submit" value="Filter">
-          </form>
+          <input id="txtFilter" type="text" placeholder="Filter..." data-bind="value: filterText, valueUpdate: 'keyup'">
           <table class="table-hover">
             <tbody data-bind="foreach: filteredLocations">
               <tr class="clickable-row">
@@ -32,7 +29,7 @@
         </div>
         <div class="content">
           <nav class="navbar navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideContent" onclick="centerMap()">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideContent">
               <span class="navbar-toggler-icon"></span>
             </button>
           </nav>
@@ -42,7 +39,7 @@
       </div>
     </div>
     <script src="js/main.min.js"></script>
-    <script async defer
+    <script async defer onerror="errorHandlerGoogeMap()"
        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyA2vSlwzVoO7GkhN22kkfc0IY8THipWPMg&callback=initMap">
     </script>
   </body>
