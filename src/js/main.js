@@ -37,21 +37,24 @@ class LocationsViewModel {
   }
 
   setSelectedItem(location) {
-    //unselect currently selected location
-    this.filteredLocations().forEach(location => location.isSelected(false));
+    //if location already selected, do nothing.
+    if (location !== selectedLocation) {
+      //unselect currently selected location
+      this.filteredLocations().forEach(location => location.isSelected(false));
 
-    //set the newly selected location
-    location.isSelected(true);
-    selectedLocation = location;
+      //set the newly selected location
+      location.isSelected(true);
+      selectedLocation = location;
 
-    //perform bounce animation once selected
-    location.marker.setAnimation(google.maps.Animation.BOUNCE);
-    setTimeout(function() {
-      location.marker.setAnimation(null);
-    }, 720);
+      //perform bounce animation once selected
+      location.marker.setAnimation(google.maps.Animation.BOUNCE);
+      setTimeout(function() {
+        location.marker.setAnimation(null);
+      }, 720);
 
-    //build and display infoWindow
-    this.showInfoWindow(location);
+      //build and display infoWindow
+      this.showInfoWindow(location);
+    }
   }
 
   showInfoWindow(location) {

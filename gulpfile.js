@@ -51,7 +51,7 @@ gulp.task('CopyHTML', function() {
 //Minify & Concat all CSS files
 gulp.task('MinifyCSS', function() {
   gulp.src(paths.css.src, { sourcemaps: true })
-    //.pipe(concat('style.min.css'))
+    .pipe(concat('style.min.css'))
     //.pipe(cleanCSS())
     .pipe(gulp.dest(paths.css.dest));
 });
@@ -59,8 +59,8 @@ gulp.task('MinifyCSS', function() {
 //Minify & Concat the JS
 gulp.task('MinifyJS', function() {
   gulp.src(paths.js.src, { sourcemaps: true })
-    //.pipe(concat('main.min.js'))
-    //.pipe(uglify())
+    .pipe(concat('main.min.js'))
+    //.pipe(uglify())  //does not support ES6 at this time.
     .pipe(gulp.dest(paths.js.dest));
 });
 
